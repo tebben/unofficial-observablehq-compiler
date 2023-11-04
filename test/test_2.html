@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+
+<head>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css"
+  />
+</head>
+<body class="O--body">
+  <div id="main"></div>
+  <script type="module">
+    import {
+      Runtime,
+      Inspector
+    } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import { Interpreter } from "/dist/index-esm.js";
+
+ 
+    const runtime = new Runtime();
+    const module = runtime.module();
+
+    const interpret = new Interpreter();
+    var target = document.querySelector("#main")
+    const observer = Inspector.into(target);
+
+    const code = "data = [{x: 1,y:1},{x:2,y:2},{x:3,y:3},{x:4,y:4}]";
+    await interpret.module(code, module, observer);
+  </script>
+</body>

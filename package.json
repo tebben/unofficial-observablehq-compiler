@@ -33,11 +33,11 @@
     "compiler"
   ],
   "dependencies": {
-    "@observablehq/parser": "4.2",
+    "@observablehq/parser": "6.0.0",
     "acorn-walk": "^7.0.0"
   },
   "devDependencies": {
-    "@observablehq/runtime": "^4.6.4",
+    "@observablehq/runtime": "5.9.4",
     "http-server": "^0.11.1",
     "prettier": "1.19.1",
     "rollup": "^1.26.4",
